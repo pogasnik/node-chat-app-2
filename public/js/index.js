@@ -1,8 +1,8 @@
 var socket = io();
 
 socket.on('connect', function () {
-    console.log('connected to server');
-
+    console.log('Connect');
+   
     // socket.emit('createEmail', {
     //     to: 'Salus@lol.com',
     //     text: 'Hey this is it '
