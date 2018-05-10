@@ -24,10 +24,11 @@ io.on('connection', (socket) => {
         'Welcome to the chat app'
     ));
 
-    socket.on('createMsg', (newMsg) => {
+    socket.on('createMsg', (newMsg, callback) => {
         console.log('Create Message', newMsg);
        
         io.emit('newMsg', generateMsg(newMsg.from, newMsg.text));
+        callback('This is from the server');
         // socket.emit('newMsg', {
         //     from: newMsg.from,
         //     text: newMsg.text,
